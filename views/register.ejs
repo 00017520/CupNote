@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <title>Register</title>
+  </head>
+  <body>
+    <div class="register">
+      <div class="auth-container">
+        <form class="auth-form" action="/api/register" method="POST">
+          <h1>Create an Account</h1>
+          <div>
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" required />
+          </div>
+
+          <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required />
+          </div>
+          <div>
+            <% if (errors && errors.length > 0) { %>
+            <ul class="error-list">
+              <% errors.forEach(error => { %>
+              <li><%= error.msg %></li>
+              <% }) %>
+            </ul>
+            <% } %>
+          </div>
+          <button type="submit">Register</button>
+
+          <p class="redirect-text">
+            Already have an account?
+            <a href="/login">Log in</a>
+          </p>
+        </form>
+      </div>
+      <div class="blur"></div>
+    </div>
+  </body>
+</html>

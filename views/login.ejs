@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/style.css">
+    <title>LogIn</title>
+  </head>
+  <body>
+    <div class="login">
+      <div class="auth-container">
+        <form id="loginForm" class="auth-form">
+          <h1>This is Login Page</h1>
+          <div>
+            <label for="username">Username</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              value="<%= username %>"
+              required
+            />
+            <% if (errors && errors.username) { %>
+            <div class="error" style="color: red"><%= errors.username %></div>
+            <% } %>
+          </div>
+
+          <div>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required />
+            <% if (errors && errors.password) { %>
+            <div class="error" style="color: red"><%= errors.password %></div>
+            <% } %>
+          </div>
+
+          <button
+            type="button"
+            onclick="submitLoginForm()"
+            onkeydown="handleKeyPress(event)"
+          >
+            Login
+          </button>
+
+          <p class="redirect-text">
+            Don't have an account?
+            <a href="/register">Register</a>
+          </p>
+        </form>
+      </div>
+      <div class="blur"></div>
+    </div>
+    <script src="/js/scripts.js"></script>
+  </body>
+</html>
+
+<!-- 
+first create js script to handle the form submission and validation
+then fetch form submission and validation errors from the server
+if there are errors, display them in the form
+then if there are no errors, redirect to the dashboard page
+ -->

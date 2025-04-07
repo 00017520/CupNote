@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  /* background-color: #f3f4f6; */
+}
+
+.register {
+  background-image: url("/images/cupcake1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  position: relative;
+}
+
+.login {
+  background-image: url("/images/cupcake3.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  position: relative;
+}
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.auth-form {
+  background: #fff;
+  padding: 2.5rem;
+  position: relative;
+  z-index: 2;
+  border: solid transparent 1px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.94);
+}
+
+.auth-form h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+  font-size: xx-large;
+}
+
+
+.auth-form label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+  color: #444;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  transition: border 0.2s ease;
+}
+
+.auth-form input:focus {
+  border-color: #a5b4fc;
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #bb63f1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #a346e5;
+}
+
+.error-list {
+  padding: 3px;
+  margin-bottom: 1rem;
+  color: #ef4444;
+  font-size: 0.9rem;
+
+}
+
+.redirect-text {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.redirect-text a {
+  color: #a346e5;
+  text-decoration: none;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.blur {
+
+  backdrop-filter: blur(3px);
+  z-index: 1;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background-color: rgba(233, 232, 232, 0.236);
+} 
