@@ -8,6 +8,8 @@ const db = require("./database/db");
 const path = require("path");
 const app = express();
 
+//accesing cookie for token
+app.use(cookieParser());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -25,8 +27,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
-//accesing cookie for token
-app.use(cookieParser());
 
 //teling to use public folder for style
 // app.use("/css", express.static("./public/styles/style.css"))

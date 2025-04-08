@@ -1,16 +1,18 @@
-const routes = require("express").Router();
+const apiRoutes = require("express").Router();
 
 
 const loginRoutes = require("./login");
 const registerRoutes = require("./register");
-const dashboardRoutes = require("./dashboard");
+const dashboardapiRoutes = require("./dashboard");
+const recipesapiRoutes = require("./recipes");
 
-routes.use("/login", loginRoutes);
-routes.use("/register", registerRoutes);
-routes.use("/dashboard", dashboardRoutes);
+apiRoutes.use("/login", loginRoutes);
+apiRoutes.use("/register", registerRoutes);
+apiRoutes.use("/dashboard", dashboardapiRoutes);//need to change
+apiRoutes.use("/recipe", recipesapiRoutes);
 
 
 
-module.exports = routes;
+module.exports = apiRoutes;
 
 //in this page we are telling express to use which api route when

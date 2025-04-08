@@ -17,6 +17,17 @@ db.serialize(() => {
       password TEXT NOT NULL
     )
   `);
-});
+  db.run(`
+    CREATE TABLE IF NOT EXISTS recipes (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      user_id INTEGER NOT NULL,
+      title TEXT NOT NULL,
+      ingredients TEXT NOT NULL,
+      content TEXT NOT NULL,
+      rating INTEGER NOT NULL,
+      FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
+    )
+  `);
+})
 
 module.exports = db;

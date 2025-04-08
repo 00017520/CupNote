@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Edit Recipe</title>
+    <link rel="stylesheet" href="/styles/style.css" />
+  </head>
+  <body>
+    <div class="edit-recipe-container recipe">
+      <h1>Edit Recipe "<%= recipe.title %>"</h1>
+      <form action="/api/recipe/<%= recipe.id %>" method="POST">
+        <div>
+          <label for="title">Title</label>
+          <input
+            type="text"
+            name="title"
+            id="title"
+            value="<%= recipe.title %>"
+            required
+          />
+        </div>
+        <div>
+          <label for="ingredients">Ingredients</label>
+          <textarea name="ingredients" id="ingredients" required>
+<%= recipe.ingredients %></textarea
+          >
+        </div>
+        <div>
+          <label for="content">Content</label>
+          <textarea name="content" id="content" required>
+<%= recipe.content %></textarea
+          >
+        </div>
+        <div>
+          <label for="rating">Rating</label>
+          <input
+            type="number"
+            name="rating"
+            id="rating"
+            value="<%= recipe.rating %>"
+            required
+            min="1"
+            max="5"
+          />
+        </div>
+
+          <button type="submit">Update Recipe</button>
+          <a href="/dashboard"
+            ><button type="button" class="cancel-btn">Cancel</button></a
+          >
+
+      </form>
+    </div>
+  </body>
+</html>

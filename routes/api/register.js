@@ -2,17 +2,12 @@ const express = require("express");
 require("dotenv").config();
 const bcrypt = require("bcryptjs");
 const db = require("../../database/db");
-const { authValidation } = require("../../middleware/auth");
+const { authValidation } = require("../../validator");
 const { validationResult } = require("express-validator");
 const jwt = require("jsonwebtoken");
 
 const registerRoutes = express.Router();
 
-
-
-registerRoutes.get("/register", (req, res) => {
-  res.render("register", { errors: [] });
-});
 
 //register
 registerRoutes.post("/", authValidation(), async (req, res) => {

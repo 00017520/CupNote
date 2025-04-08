@@ -1,10 +1,10 @@
 const express = require("express");
-const routes = express.Router();
+const webRoutes = express.Router();
 
-const recipeRoutes = require("./recipes");
-const userRoutes = require("./users");  //for login and register
+const userRoutes = require("./users");           //for login and register
+const dashboardwebRoutes = require("./dashboard");       //for dashboard
 
-routes.use("/recipes", recipeRoutes);
-routes.use("/", userRoutes);
+webRoutes.use("/dashboard", dashboardwebRoutes);    //get for dashboard
+webRoutes.use("/", userRoutes);
 
-module.exports = routes;
+module.exports = webRoutes;

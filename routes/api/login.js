@@ -1,12 +1,13 @@
 const express = require("express");
 const bcrypt = require("bcryptjs");
 const db = require("../../database/db");
-const router = express.Router();
-router.use(express.json());
-router.use(express.urlencoded({ extended: true }));
+const loginRoutes = express.Router();
+loginRoutes.use(express.json());
+loginRoutes.use(express.urlencoded({ extended: true }));
 const jwt = require("jsonwebtoken");
+const { authValidation } = require("../../validator");
 
-router.post("/", async (req, res) => {
+loginRoutes.post("/",authValidation(), async (req, res) => {
  
   const { username, password } = req.body;
  
@@ -53,5 +54,5 @@ router.post("/", async (req, res) => {
   });
 });
 
-module.exports = router;
+module.exports = loginRoutes;
 
