@@ -19,3 +19,6 @@ but I dont have controllers, because it's kinda mixed with it in my mind.
 insdead: I have routes that got api and web, api that works between client side and bussness logic. and web stand for rendering client side.
 
 all other things are as mentioned on cw.
+
+github: https://github.com/00017520/cupNote
+deployed: https://zircon-cactus-soccer.glitch.me/
